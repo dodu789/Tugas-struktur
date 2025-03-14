@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image:url('background.jpg');
+            background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -45,15 +45,14 @@
             border-radius: 5px;
         }
         .form-container button:hover, .pagination button:hover {
-            background-color: #e532d0;
-
+            background-color: #c021a3;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
             background-color: rgba(255, 255, 255, 0.8);
-            color: rgb(8, 8, 8);
+            color: black;
         }
         table, th, td {
             border: 1px solid #ddd;
@@ -83,14 +82,12 @@
 <body>
     <div class="container">
         <h1>Manajemen Data Mahasiswa</h1>
-
         <div class="form-container">
             <input type="text" id="nama" placeholder="Nama">
             <input type="text" id="nim" placeholder="NIM">
-            <input type="number" id="kehadiran%" placeholder="Kehadiran">
+            <input type="number" id="kehadiran" placeholder="Kehadiran">
             <button onclick="tambahData()">Tambah Data</button>
         </div>
-
         <div class="filter-container">
             <label for="itemsPerPage">Tampilkan:</label>
             <select id="itemsPerPage" onchange="changeItemsPerPage()">
@@ -100,28 +97,17 @@
                 <option value="20">20</option>
                 <option value="25">25</option>
             </select>
-
             <label for="sortOption">Urutkan:</label>
             <select id="sortOption" onchange="sortData()">
-                <option value="default">default</option>
+                <option value="default">Default</option>
                 <option value="nama-asc">Nama (A-Z)</option>
                 <option value="nama-desc">Nama (Z-A)</option>
                 <option value="nim-asc">NIM (Kecil-Besar)</option>
                 <option value="nim-desc">NIM (Besar-Kecil)</option>
             </select>
-
-            <label for="kehadiranFilter">Kehadiran:</label>
-            <select id="kehadiranFilter" onchange="filterData()">
-                <option value="">Semua</option>
-                <option value="10%">10</option>
-                <option value="50%">50</option>
-                <option value="80%">80</option>
-            </select>
-
             <label for="search">Cari Data:</label>
             <input type="text" id="search" oninput="filterData()" placeholder="Cari berdasarkan nama atau NIM">
         </div>
-
         <table id="dataTable">
             <thead>
                 <tr>
@@ -135,14 +121,12 @@
                 <!-- Data akan diisi oleh JavaScript -->
             </tbody>
         </table>
-
         <div class="pagination">
             <button onclick="changePage(-1)">Previous</button>
             <span id="pageInfo"></span>
             <button onclick="changePage(1)">Next</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
